@@ -7,8 +7,11 @@ let teaCostDict: [String: Int] = ["Black": 100, "Green": 105, "Fruit": 110]
 var queue: [String] = ["Black", "Black", "Fruit", "Green", "Black"]
 
 for (i,v) in queue.enumerated() {
-    
-    print("Costumer \(i+1) ordered \(v) tea and he must pay \(teaCostDict[v] ?? -1) Kc")
+    if teaCostDict.keys.contains(v) {
+        print("Costumer \(i+1) ordered \(v) tea and he must pay \(teaCostDict[v] ?? -1) Kc")
+    } else {
+        print("We dont have this type of tea - \(v). Sorry")
+    }
 }
 
 // 2. Есть массив [-4, 5, 10, nil, 4, nil, 25, 0, nil, 16, 75, -20, -7, 15, 0, nil]. Необходимо создать новый массив, который будет состоять из элементов старого, но не должно быть nil, не должно быть 0 и 4, а также массив должен быть отсортирован по возрастанию.
