@@ -25,13 +25,13 @@ struct PizzaConstructor {
         case tomatos
         case mushrooms
         case oregano
-        case noToppings
+
     }
     
     var cost: Double = 189
     var name: PizzaType = .margherita
     var doughType: Dough = .thin
-    var pizzaToppings: [Toppings] = [.noToppings]
+    var pizzaToppings: [Toppings] = []
 }
 
 // Создать класс пиццерии, добавить массив с возможными видами пиццы. Переменная с массивом должна быть приватной. Массив задаётся в инициализаторе.
@@ -56,10 +56,11 @@ class Pizzeria {
 
 // Создать экземпляр класса пиццерии и добавить в него несколько видов пицц.
 
-let defaultPizza = [PizzaConstructor(), PizzaConstructor(name: .hawaii, doughType: .thin, pizzaToppings: [.noToppings]), PizzaConstructor(name: .peperoni, doughType: .thin, pizzaToppings: [.noToppings])]
+let defaultPizza = [PizzaConstructor(), PizzaConstructor(name: .hawaii, doughType: .thin, pizzaToppings: []), PizzaConstructor(name: .peperoni, doughType: .thin, pizzaToppings: [])]
 let newVeryVeryBestPizzeria = Pizzeria(pizza: defaultPizza)
 
-newVeryVeryBestPizzeria.addPizza(pizza: PizzaConstructor(cost: 209, name: .hawaii, doughType: .thin, pizzaToppings: [.noToppings]))
-newVeryVeryBestPizzeria.addPizza(pizza: PizzaConstructor(cost: 229, name: .hawaii, doughType: .thick, pizzaToppings: [.noToppings]))
+newVeryVeryBestPizzeria.addPizza(pizza: PizzaConstructor(cost: 209, name: .hawaii, doughType: .thin, pizzaToppings: []))
+newVeryVeryBestPizzeria.addPizza(pizza: PizzaConstructor(cost: 229, name: .hawaii, doughType: .thick, pizzaToppings: []))
 newVeryVeryBestPizzeria.addPizza(pizza: PizzaConstructor(cost: 249, name: .diablo, doughType: .thin, pizzaToppings: [.mushrooms, .peperoni]))
 
+print(newVeryVeryBestPizzeria.getPizzaList())
